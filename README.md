@@ -49,14 +49,18 @@ spring.jpa.properties.hibernate.format_sql=true`
 
 ### Script SQL
 
-`INSERT INTO tb_department(name) VALUES ('Gestão');
+ˋˋˋ
+INSERT INTO tb_department(name) VALUES ('Gestão');
 INSERT INTO tb_department(name) VALUES ('Informática');
 
 INSERT INTO tb_user(department_id, name, email) VALUES (1, 'Maria', 'maria@gmail.com');
 INSERT INTO tb_user(department_id, name, email) VALUES (1, 'Bob', 'bob@gmail.com');
 INSERT INTO tb_user(department_id, name, email) VALUES (2, 'Alex', 'alex@gmail.com');
 INSERT INTO tb_user(department_id, name, email) VALUES (2, 'Ana', 'ana@gmail.com');`
+ˋˋˋ
 
 ### Collection Postman
+ˋˋˋ
+[{"id":1,"name":"Maria","email":"maria@gmail.com","department":{"id":1,"name":"Gestão"}},{"id":2,"name":"Bob","email":"bob@gmail.com","department":{"id":1,"name":"Gestão"}},{"id":3,"name":"Alex","email":"alex@gmail.com","department":{"id":2,"name":"Informática"}},{"id":4,"name":"Ana","email":"ana@gmail.com","department":{"id":2,"name":"Informática"}},{"id":5,"name":"Joaquim","email":"joaquim@gmail.com","department":{"id":1,"name":"Gestão"}}]
+ˋˋˋ
 
-[https://www.getpostman.com/collections/ac4a49113c4024e47d4f](https://www.getpostman.com/collections/ac4a49113c4024e47d4f)
