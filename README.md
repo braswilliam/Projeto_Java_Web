@@ -1,6 +1,6 @@
-# Projeto:
+# <span style="color:lightblue">Projeto:</span>
 
-Visão geral do sistema
+## <span style="color:lightblue">Visão geral do sistema</span> 
 
 Vamos construir um pequeno sistema (API REST) de usuários e departamentos, com os seguintes casos de uso:
 
@@ -10,11 +10,11 @@ Vamos construir um pequeno sistema (API REST) de usuários e departamentos, com 
 
 ![https://raw.githubusercontent.com/devsuperior/java-web-spring-2022/main/img/dominio.png](https://raw.githubusercontent.com/devsuperior/java-web-spring-2022/main/img/dominio.png)
 
-### Desenvolvimento moderno: relacional -> objeto -> json
+### <span style="color:lightblue">Desenvolvimento moderno: relacional -> objeto -> json</span>
 
 ![https://raw.githubusercontent.com/devsuperior/java-web-spring-2022/main/img/objetos.png](https://raw.githubusercontent.com/devsuperior/java-web-spring-2022/main/img/objetos.png)
 
-### Passos da aula
+### <span style="color:lightblue">Passos do projeto</span> 
 
 - Criar o projeto
 - Implementar o modelo de domínio
@@ -22,9 +22,9 @@ Vamos construir um pequeno sistema (API REST) de usuários e departamentos, com 
 - Configurar o banco de dados H2
 - Criar os endpoints da API REST
 
-### Trechos de código para copiar
+### <span style="color:lightblue">Trechos de código para copiar</span> 
 
-### Configuração do Maven Resources Plugin
+### <span style="color:lightblue">Configuração do Maven Resources Plugin</span> 
 
 `<plugin>
 	<groupId>org.apache.maven.plugins</groupId>
@@ -32,22 +32,22 @@ Vamos construir um pequeno sistema (API REST) de usuários e departamentos, com 
 	<version>3.1.0</version>
 </plugin>`
 
-### Configurações do banco de dados
+### <span style="color:lightblue">Configurações Configuração do Maven Resources Plugando banco de dados</span> 
 
 `# Dados de conexão com o banco H2
 spring.datasource.url=jdbc:h2:mem:testdb
 spring.datasource.username=sa
 spring.datasource.password=
 
-# Configuração do cliente web do banco H2
+### <span style="color:lightblue">Configuração do cliente web do banco H2</span> 
 spring.h2.console.enabled=true
 spring.h2.console.path=/h2-console
 
-# Configuração para mostrar o SQL no console
+### <span style="color:lightblue">Configuração para mostrar o SQL no console</span> 
 spring.jpa.show-sql=true
 spring.jpa.properties.hibernate.format_sql=true`
 
-### Script SQL
+### <span style="color:lightblue">Script SQL</span> 
 
 ````
 INSERT INTO tb_department(name) VALUES ('Gestão');
@@ -59,7 +59,7 @@ INSERT INTO tb_user(department_id, name, email) VALUES (2, 'Alex', 'alex@gmail.c
 INSERT INTO tb_user(department_id, name, email) VALUES (2, 'Ana', 'ana@gmail.com');`
 ````
 
-### Collection Postman
+### <span style="color:lightblue">Collection Postman</span>
 ````
 [{"id":1,"name":"Maria","email":"maria@gmail.com","department":{"id":1,"name":"Gestão"}},
 {"id":2,"name":"Bob","email":"bob@gmail.com","department":{"id":1,"name":"Gestão"}},
@@ -67,4 +67,27 @@ INSERT INTO tb_user(department_id, name, email) VALUES (2, 'Ana', 'ana@gmail.com
 {"id":4,"name":"Ana","email":"ana@gmail.com","department":{"id":2,"name":"Informática"}},
 {"id":5,"name":"Joaquim","email":"joaquim@gmail.com","department":{"id":1,"name":"Gestão"}}]
 ````
+
+### <span style="color:lightblue">Comandos das requisições:</span>
+
+<span style="color:Orange">Pegando lista de Usuários:</span> <span style="color:Green">GET</span>
+``http://localhost:8080/users``
+
+<span style="color:Orange">Pegando  Usuário:</span> <span style="color:Green">GET</span>
+``http://localhost:8080/users/1``
+
+<span style="color:Orange">Adicionando um novo Usuário:</span> <span style="color:Green">POST</span>
+``http://localhost:8080/users``
+
+<span style="color:Orange">COMANDO JSON:</span>
+
+```
+{
+"name": "Joaquim",
+"email": "joaquim@gmail.com",
+"department": {
+"id": 1
+}
+}
+```
 
